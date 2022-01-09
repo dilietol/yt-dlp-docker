@@ -11,5 +11,6 @@ Instructions:
 - Open portainer
 - select Build a new Image
 - define a name (ie. test_abstrakct_docker-yt-dlp:0.3)
-- set the url to the dockerfile: go to https://github.com/dilietol/yt-dlp-docker/blob/main/dockerfile and then copy the url to the raw content
+- set the url to the dockerfile: https://raw.githubusercontent.com/dilietol/yt-dlp-docker/main/dockerfile
+- 
 - 
