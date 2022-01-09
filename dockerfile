@@ -17,4 +17,4 @@ RUN curl -SL https://raw.githubusercontent.com/abstrakct/docker-yt-dlp/master/ru
 RUN curl -SL https://raw.githubusercontent.com/abstrakct/docker-yt-dlp/master/do-notify.sh --output /scripts/do-notify.sh
 RUN chmod +x /scripts/run-youtube-dl.sh && chmod +x /scripts/do-notify.sh
 
-CMD /run-youtube-dl.sh
+CMD /scripts/run-youtube-dl.sh
