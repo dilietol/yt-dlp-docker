@@ -7,14 +7,13 @@ RUN apt-get -y update && \
     python3 -m pip install --upgrade git+https://github.com/yt-dlp/yt-dlp.git@release && \
     python3 -m pip install apprise
 
-VOLUME [/config /downloads]
+VOLUME [/config /downloads /log]
 
 RUN mkdir /scripts
 
 WORKDIR /scripts
 
-RUN curl -SL https://raw.githubusercontent.com/abstrakct/docker-yt-dlp/master/run-youtube-dl.sh --output /scripts/run-youtube-dl.sh
-RUN curl -SL https://raw.githubusercontent.com/abstrakct/docker-yt-dlp/master/do-notify.sh --output /scripts/do-notify.sh
-RUN chmod +x /scripts/run-youtube-dl.sh && chmod +x /scripts/do-notify.sh
+RUN curl -SL https://raw.githubusercontent.com/dilietol/yt-dlp-docker/main/run-yt-dlp.sh --output /scripts/run-yt-dlp.sh
+RUN chmod +x /scripts/run-yt-dlp.sh
 
-CMD /scripts/run-youtube-dl.sh
+ENTRYPOINT /scripts/run-yt-dlp.sh
